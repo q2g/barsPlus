@@ -59,9 +59,9 @@
 			items: {
 				attribute: {
 					type: "string",
+					component: "expression",
 					ref: "qAttributeExpressions.0.qExpression",
 					label: "Dimension attribute",
-					expression: "always",
 					defaultValue: ""
 				}
 			}
@@ -76,7 +76,6 @@
 					component: "expression",
 					ref: "qAttributeExpressions.0.qExpression",
 					label: "Measure attribute",
-					expression: "always",
 					defaultValue: ""
 				}
 			}
