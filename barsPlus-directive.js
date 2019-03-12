@@ -32,6 +32,7 @@ function ($, qvangular, ldwBarsPlus) {
 				link: function($scope, $element, $attrs) {
 
 					$scope.g = Object.create(ldwbarsPlus);
+					$scope.g.self = $scope.backendApi;
 
 					var g = $scope.g;
 
