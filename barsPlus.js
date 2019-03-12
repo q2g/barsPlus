@@ -22,15 +22,24 @@
 */
 define( [
 	"jquery",
+	"qlik",
 	"./barsPlus-initprops",
 	"./barsPlus-props",
 	"text!./barsPlus-template.html",
 	"./barsPlus-directive"
 ],
 
-function ($, initprops, props, template) {
+function ($, qlik, initprops, props, template) {
 	'use strict';
 	
+	function isEditMode() {
+		if (qlik.navigation.getMode() === "analysis") {
+            return false;
+        } else {
+            return true;
+        }
+	}
+
 	return {
 		initialProperties: initprops,
 		definition: props,
@@ -43,11 +52,12 @@ function ($, initprops, props, template) {
 //			console.log('resize>',$element,layout,$element.scope());
 //		},
 		template: template,
-		controller: ['$scope', function($scope) {			
+		controller: ['$scope', function($scope) {
+			$scope.isEditMode = isEditMode;
 		}],
 		paint: function ($element, layout) {
 			var self = this;
-			self.$scope.g.self = this.backendApi; // Save reference for call to backendApi
+			self.$scope.g.self = self; // Save reference for call to backendApi
 
 			// Only repaint here when in edit mode
 			self.$scope.g.editMode = (self.options.interactionState == 2);
