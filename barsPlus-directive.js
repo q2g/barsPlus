@@ -118,7 +118,12 @@ function ($, qvangular, ldwBarsPlus) {
 						g.totalFormatMs = p.totalFormatMs;
 
 						// Transitions
-						g.transitions = p.transitions;
+						var inPrinting = typeof window.testprint === "object";
+						if (!inPrinting) {
+							g.transitions = p.transitions;
+						} else {
+							g.transitions = false;
+						}
 						g.transitionDelay = p.transitionDelay;
 						g.transitionDuration = p.transitionDuration;
 						g.ease = p.ease
