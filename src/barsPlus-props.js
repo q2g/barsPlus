@@ -31,18 +31,18 @@
 			}
 		}
 		let dimensionList = []
-		window.engineModuleGlobal.currentApp.createSessionObject(param)
-		.then(function(object) {
-			return object.getLayout()
-		})
-		.then(function(layout) {
-			for (const dimension of layout.qDimensionList.qItems) {
-				dimensionList.push({id: dimension.qInfo.qId, title: dimension.qMeta.title})
-			}
-		})
-		.catch(function(error) {
-			console.log(error)
-		})
+		// window.engineModuleGlobal.currentApp.createSessionObject(param)
+		// .then(function(object) {
+		// 	return object.getLayout()
+		// })
+		// .then(function(layout) {
+		// 	for (const dimension of layout.qDimensionList.qItems) {
+		// 		dimensionList.push({id: dimension.qInfo.qId, title: dimension.qMeta.title})
+		// 	}
+		// })
+		// .catch(function(error) {
+		// 	console.log(error)
+		// })
 
 		function getDimensionName(id) {
 			return dimensionList.filter(function (value) {
