@@ -1,0 +1,7 @@
+{
+    "entryFile": "./barsPlus.js",
+    "outFileName": "barsPlus",
+    "outputDirectory": "./dist",
+    "tsConfigFile": "q2g-build.tsconfig.json",
+    "watch": false
+}
